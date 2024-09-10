@@ -17,21 +17,72 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #666;
+    background-color: #cec7c7;
     font-family: Arial, sans-serif;
 }
 
 .slider-wrapper {
     width: 80%;
-    /* Ширина обертки */
-    max-width: 800px;
-    /* Максимальная ширина обертки */
+    max-width: 80rem;
     padding: 1rem;
-    /* Внутренние отступы */
     background-color: #ffffff;
-    /* Цвет фона обертки */
+    border-radius: 1rem;
+    box-shadow: 1.2rem 1.2rem 1rem rgba(87, 85, 85, 0.8);
+}
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+.slides {
+    width: 100%;
+    display: flex;
+    scroll-snap-type: x mandatory;
+}
+
+.slide {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
     border-radius: 0.5rem;
-    /* Радиус границ */
-    box-shadow: 0 0 10px rgba(230, 225, 225, 0.8);
-    /* Тень для обертки */
+}
+
+.controls {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-left: auto;
+    margin-right: 1rem;
+}
+
+.dot {
+    width: 2rem;
+    height: 2rem;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot:hover,
+.dot.active {
+    background-color: #333;
+}
+
+.h3 {
+    margin-top: 1rem;
+    font-size: 2.5rem;
+    text-align: center;
 }
