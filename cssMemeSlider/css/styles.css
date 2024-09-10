@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #cec7c7;
+    font-family: Arial, sans-serif;
+}
+
+.slider-wrapper {
+    width: 80%;
+    max-width: 80rem;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 1.2rem 1.2rem 1rem rgba(87, 85, 85, 0.8);
+    overflow: hidden;
+}
+
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+.slides {
+    width: 100%;
+    display: flex;
+    transition: transform 0.7s ease;
+}
+
+
+.slide {
+    flex: 0 0 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(0);
+    transition: opacity 0.7s ease;
+}
+
+
+.slide img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: 0.5rem;
+}
+
+
+.controls {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-left: auto;
+    margin-right: 1rem;
+}
+
+#slide1:checked~.slides {
+    transform: translateX(0);
+    /* Первый слайд: нет смещения */
+}
+
+#slide2:checked~.slides {
+    transform: translateX(-100%);
+    /* Второй слайд: смещение влево на 100% */
+}
+
+#slide3:checked~.slides {
+    transform: translateX(-200%);
+    /* Третий слайд: смещение влево на 200% */
+}
+
+#slide4:checked~.slides {
+    transform: translateX(-300%);
+    /* Четвертый слайд: смещение влево на 300% */
+}
+
+
+/* Активная точка (dot) при выборе соответствующего слайда */
+#slide1:checked~.controls label[for="slide1"],
+#slide2:checked~.controls label[for="slide2"],
+#slide3:checked~.controls label[for="slide3"],
+#slide4:checked~.controls label[for="slide4"] {
+    background-color: #11c3e2;
+}
+
+.dot {
+    width: 2rem;
+    height: 2rem;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot:hover,
+.dot.active {
+    background-color: #eba510f3;
+}
+
+.h3 {
+    margin-top: 1rem;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+
+@media (max-width: 50rem) {
+
+    .container {
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    .slider-wrapper {
+        padding: 0.5rem;
+        box-shadow: none;
+    }
+
+    .h3 {
+        font-size: 2rem;
+    }
+
+    .controls {
+        margin: auto;
+    }
+
+}
