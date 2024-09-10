@@ -125,3 +125,26 @@ input[type="radio"] {
     font-size: 2.5rem;
     text-align: center;
 }
+
+
+@media (max-width: 50rem) {
+
+    .container {
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    .slider-wrapper {
+        padding: 0.5rem;
+        box-shadow: none;
+    }
+
+    .h3 {
+        font-size: 2rem;
+    }
+
+    .controls {
+        margin: auto;
+    }
+
+}
