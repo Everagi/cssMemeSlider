@@ -41,22 +41,23 @@ input[type="radio"] {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    overflow: hidden;
 }
 
 .slides {
     width: 100%;
     display: flex;
-    overflow: hidden;
+    transition: transform 0.7s ease;
 }
 
 
 .slide {
     flex: 0 0 100%;
     justify-content: center;
-    display: none;
-    /*вот здесь какаято хрень*/
     flex-direction: column;
     align-items: center;
+    transform: translateX(0);
+    transition: opacity 0.7s ease;
 }
 
 
@@ -76,14 +77,26 @@ input[type="radio"] {
     margin-right: 1rem;
 }
 
-
-/* Показ слайда при выборе соответствующей радиокнопки */
-#slide1:checked~.slides #s1,
-#slide2:checked~.slides #s2,
-#slide3:checked~.slides #s3,
-#slide4:checked~.slides #s4 {
-    display: flex;
+#slide1:checked~.slides {
+    transform: translateX(0);
+    /* Первый слайд: нет смещения */
 }
+
+#slide2:checked~.slides {
+    transform: translateX(-100%);
+    /* Второй слайд: смещение влево на 100% */
+}
+
+#slide3:checked~.slides {
+    transform: translateX(-200%);
+    /* Третий слайд: смещение влево на 200% */
+}
+
+#slide4:checked~.slides {
+    transform: translateX(-300%);
+    /* Четвертый слайд: смещение влево на 300% */
+}
+
 
 /* Активная точка (dot) при выборе соответствующего слайда */
 #slide1:checked~.controls label[for="slide1"],
