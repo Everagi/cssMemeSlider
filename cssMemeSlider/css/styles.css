@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #666;
+    font-family: Arial, sans-serif;
+}
+
+.slider-wrapper {
+    width: 80%;
+    /* Ширина обертки */
+    max-width: 800px;
+    /* Максимальная ширина обертки */
+    padding: 1rem;
+    /* Внутренние отступы */
+    background-color: #ffffff;
+    /* Цвет фона обертки */
+    border-radius: 0.5rem;
+    /* Радиус границ */
+    box-shadow: 0 0 10px rgba(230, 225, 225, 0.8);
+    /* Тень для обертки */
+}
