@@ -32,30 +32,33 @@ input[type="radio"] {
     background-color: #ffffff;
     border-radius: 1rem;
     box-shadow: 1.2rem 1.2rem 1rem rgba(87, 85, 85, 0.8);
+    overflow: hidden;
 }
+
 
 .slider {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    overflow: hidden;
 }
 
 .slides {
     width: 100%;
     display: flex;
-    scroll-snap-type: x mandatory;
+    overflow: hidden;
 }
 
+
 .slide {
-    display: none;
     flex: 0 0 100%;
-    scroll-snap-align: center;
-    display: flex;
+    justify-content: center;
+    display: none;
+    /*вот здесь какаято хрень*/
     flex-direction: column;
     align-items: center;
 }
+
 
 .slide img {
     width: 100%;
@@ -63,6 +66,7 @@ input[type="radio"] {
     max-width: 100%;
     border-radius: 0.5rem;
 }
+
 
 .controls {
     display: flex;
@@ -72,13 +76,13 @@ input[type="radio"] {
     margin-right: 1rem;
 }
 
+
 /* Показ слайда при выборе соответствующей радиокнопки */
 #slide1:checked~.slides #s1,
 #slide2:checked~.slides #s2,
 #slide3:checked~.slides #s3,
 #slide4:checked~.slides #s4 {
     display: flex;
-    /* Показать выбранный слайд */
 }
 
 /* Активная точка (dot) при выборе соответствующего слайда */
@@ -87,7 +91,6 @@ input[type="radio"] {
 #slide3:checked~.controls label[for="slide3"],
 #slide4:checked~.controls label[for="slide4"] {
     background-color: #11c3e2;
-    /* Цвет активной точки */
 }
 
 .dot {
